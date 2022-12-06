@@ -1,5 +1,6 @@
 package com.m2i.gestionfactures.service;
 
+import com.m2i.gestionfactures.dao.BillDao;
 import com.m2i.gestionfactures.model.Bill;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class BillService implements Service<Bill>{
 
     @Override
     public Bill create(Bill bill) {
-        return null;
+        return new BillDao().create(bill);
     }
 
     @Override

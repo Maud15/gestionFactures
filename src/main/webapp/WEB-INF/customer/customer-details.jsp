@@ -55,16 +55,16 @@
         <td><c:out value="${bill.dateBill}"/></td>
         <td><c:out value="${bill.amountTaxFree}"/></td>
         <td><c:out value="${bill.amountWithTax}"/></td>
-        <td><form action="/bills/update" method="get"><input type="hidden" name="id" value="${bill.id}"><button>Modifier</button></form></td>
-        <td><form action="/bills/delete" method="post"><input type="hidden" name="id" value="${bill.id}"><button>Supprimer</button></form></td>
-        <td><form action="/bills/details" method="get"><input type="hidden" name="id" value="${bill.id}"><button>Voir en détails</button></form></td>
+        <td><form action="/bill/update" method="get"><input type="hidden" name="id" value="${bill.id}"><button>Modifier</button></form></td>
+        <td><form action="/bill/delete" method="post"><input type="hidden" name="id" value="${bill.id}"><button>Supprimer</button></form></td>
+        <td><form action="/bill/details" method="get"><input type="hidden" name="customerId" value="${bill.id}"><button>Voir en détails</button></form></td>
 
     </tr>
     </c:forEach>
     </tbody>
 
 </table>
-<a href="/bills/add?idClient=${customer.id}">Saisir une nouvelle facture</a>
+<a href="/bill/add?customerId=${customer.id}">Saisir une nouvelle facture</a>
 
 </body>
 </html>

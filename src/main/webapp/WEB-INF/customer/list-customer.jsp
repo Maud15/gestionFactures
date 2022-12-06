@@ -35,9 +35,9 @@
         <td><c:out value="${customer.address}  ${customer.postCode}  ${customer.city}"/></td>
         <td><c:out value="${customer.phoneNumber}"/></td>
         <td><c:out value="${customer.email}"/></td>
-        <td><form action="/customers/update" method="get"><input type="hidden" name="id" value="${customer.id}"><button>Modifier</button></form></td>
-        <td><form action="/customers/delete" method="post"><input type="hidden" name="id" value="${customer.id}"><button>Supprimer</button></form></td>
-        <td><form action="/customers/details" method="get"><input type="hidden" name="id" value="${customer.id}"><button>Voir en détails</button></form></td>
+        <td><form action="/customers/update" method="get"><input type="hidden" name="customerId" value="${customer.id}"><button>Modifier</button></form></td>
+        <td><form action="/customers/delete" method="post"><input type="hidden" name="customerId" value="${customer.id}"><button>Supprimer</button></form></td>
+        <td><form action="/customers/details" method="get"><input type="hidden" name="customerId" value="${customer.id}"><button>Voir en détails</button></form></td>
     </tr>
     </c:forEach>
     </tbody>

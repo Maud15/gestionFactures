@@ -17,10 +17,13 @@ public class CustomerDetailsServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String idStr = req.getParameter("id");
+        String idStr = req.getParameter("customerId");
+        if (idStr == null){
+            idStr = (String) req.getAttribute("customerId");
+        }
         Long id = Long.parseLong(idStr);
         Optional<Customer> optCust = new CustomerService().get(id);
         req.setAttribute("customer", optCust.get());
-        req.getRequestDispatcher("/WEB-INF/customer-details.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/customer/customer-details.jsp").forward(req,resp);
     }
 }
