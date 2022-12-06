@@ -10,7 +10,7 @@
 <body>
     <h1>Ajouter un nouveau client</h1>
 
-    <form method="post" action="#">
+    <form method="post" action="${pageContext.request.contextPath}/customers/add">
         <label for="designation">Raison sociale</label>
         <input id="designation" name="designation">
         <label for="address">Adresse</label>

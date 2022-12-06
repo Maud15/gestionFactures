@@ -15,7 +15,7 @@
             <property name="hibernate.show_sql" value="false"/>
 
             <!-- Stratégie pour la génération du schéma de la base données     -->
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
 
         </properties>
     </persistence-unit>

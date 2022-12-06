@@ -30,7 +30,7 @@ public class Bill {
     @Transient
     private Float amountWithTax;
 
-    @OneToMany(targetEntity = ProductBill.class, mappedBy = "bill")
+    @OneToMany(targetEntity = ProductBill.class, mappedBy = "bill", fetch = FetchType.LAZY)
     private List<ProductBill> productsBillsList;
 
 
@@ -53,6 +53,14 @@ public class Bill {
     }
     public void setDateBill(LocalDate dateBill) {
         this.dateBill = dateBill;
+    }
+
+    public List<ProductBill> getProductsBillsList() {
+        return productsBillsList;
+    }
+
+    public void setProductsBillsList(List<ProductBill> productsBillsList) {
+        this.productsBillsList = productsBillsList;
     }
 
     public Customer getCustomer() {

@@ -2,6 +2,7 @@ package com.m2i.gestionfactures.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -25,7 +26,7 @@ public class Customer {
     private String phoneNumber;
     private String email;
 
-    @OneToMany(targetEntity = Bill.class, mappedBy = "customer")
+    @OneToMany(targetEntity = Bill.class, mappedBy = "customer", fetch = FetchType.LAZY)
     private List<Bill> billList;
 
     public Customer() {
@@ -38,6 +39,7 @@ public class Customer {
         this.city = city;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.billList= new ArrayList<>();
     }
 
     public Long getId() {

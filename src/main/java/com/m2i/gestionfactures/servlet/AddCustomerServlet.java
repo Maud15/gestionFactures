@@ -19,7 +19,6 @@ public class AddCustomerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("/WEB-INF/add-customer.jsp").forward(req,resp);
     }
-    //patate
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String designation = req.getParameter("designation");
@@ -33,6 +32,6 @@ public class AddCustomerServlet extends HttpServlet {
         CustomerService customerService = new CustomerService();
 
         customerService.create(newCustomer);
-
+        resp.sendRedirect(req.getContextPath() + CustomersListServlet.URL);
     }
 }
