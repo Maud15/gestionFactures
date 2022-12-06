@@ -70,4 +70,6 @@ public class CustomerDao implements Dao<Customer> {
             em.close();
         }
     }
+
+
 }

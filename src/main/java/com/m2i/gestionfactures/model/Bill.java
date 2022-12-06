@@ -14,8 +14,10 @@ public class Bill {
     @Column(name = "Id_Bill")
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    //@Column(nullable = false, unique = true)
+    @Transient
     private String billNumber;
+
     @Column(nullable = false)
     private LocalDate dateBill;
 

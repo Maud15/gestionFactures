@@ -13,7 +13,8 @@ public class Customer {
     @Column(name = "idCustomer")
     private Long id;
 
-    @Column(unique = true, nullable = false)
+    //@Column(unique = true, nullable = false)
+    @Transient
     private String customerNumber;
 
     @Column(nullable = false)
@@ -28,6 +29,15 @@ public class Customer {
     private List<Bill> billList;
 
     public Customer() {
+    }
+
+    public Customer(String designation, String address, String postCode, String city, String phoneNumber, String email) {
+        this.designation = designation;
+        this.address = address;
+        this.postCode = postCode;
+        this.city = city;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
     }
 
     public Long getId() {
@@ -84,5 +94,12 @@ public class Customer {
     }
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Bill> getBillList() {
+        return billList;
+    }
+    public void setBillList(List<Bill> billList) {
+        this.billList = billList;
     }
 }
