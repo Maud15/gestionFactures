@@ -3,6 +3,7 @@ package com.m2i.gestionfactures.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -33,6 +34,17 @@ public class Bill {
     @OneToMany(targetEntity = ProductBill.class, mappedBy = "bill", fetch = FetchType.LAZY)
     private List<ProductBill> productsBillsList;
 
+    public Bill(LocalDate dateBill, Customer customer) {
+        this.dateBill = dateBill;
+        this.customer = customer;
+        this.amountTaxFree = 0f;
+        this.amountWithTax = 0f;
+        this.productsBillsList = new ArrayList<>();
+    }
+
+    public Bill() {
+
+    }
 
     public Long getId() {
         return id;

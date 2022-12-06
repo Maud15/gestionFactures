@@ -22,10 +22,10 @@ public class UpdateCustomerServlet extends HttpServlet {
         Optional<Customer> optCust = new CustomerService().get(id);
         if(optCust.isPresent()){
             req.setAttribute("customer", optCust.get());
-            req.getRequestDispatcher("/WEB-INF/update-customers.jsp").forward(req,resp);
+            req.getRequestDispatcher("/WEB-INF/customer/update-customers.jsp").forward(req,resp);
         } else{
             req.setAttribute("error", "L'identifiant choisi ne correspond à aucun client");
-            req.getRequestDispatcher("/WEB-INF/list-customer.jsp").forward(req,resp);
+            req.getRequestDispatcher("/WEB-INF/customer/list-customer.jsp").forward(req,resp);
         }
 
     }
