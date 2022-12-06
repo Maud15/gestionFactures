@@ -1,4 +1,4 @@
-<%@ page import="com.m2i.gestionfactures.servlet.UpdateCustomerServlet" %><%--
+<%@ page import="com.m2i.gestionfactures.servlet.customer.UpdateCustomerServlet" %><%--
   Created by IntelliJ IDEA.
   User: duarte
   Date: 06/12/2022
@@ -36,8 +36,8 @@
         <td><c:out value="${customer.phoneNumber}"/></td>
         <td><c:out value="${customer.email}"/></td>
         <td><form action="/customers/update" method="get"><input type="hidden" name="id" value="${customer.id}"><button>Modifier</button></form></td>
-        <td><form action="/customers/delete" method="post"><input type="hidden" name="id" value="=games.get(i).getId()%>"><button>Supprimer</button></form></td>
-        <td><form action="=request.getContextPath()%>/games/details" method="get"><input type="hidden" name="id" value="=games.get(i).getId()%>"><button>Voir en détails</button></form></td>
+        <td><form action="/customers/delete" method="post"><input type="hidden" name="id" value="${customer.id}"><button>Supprimer</button></form></td>
+        <td><form action="/customers/details" method="get"><input type="hidden" name="id" value="${customer.id}"><button>Voir en détails</button></form></td>
     </tr>
     </c:forEach>
     </tbody>

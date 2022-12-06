@@ -26,7 +26,7 @@ public class Customer {
     private String phoneNumber;
     private String email;
 
-    @OneToMany(targetEntity = Bill.class, mappedBy = "customer", fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = Bill.class, mappedBy = "customer", fetch = FetchType.EAGER)
     private List<Bill> billList;
 
     public Customer(Long id, String designation, String address, String postCode, String city, String phoneNumber, String email) {

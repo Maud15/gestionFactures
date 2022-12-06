@@ -1,4 +1,4 @@
-package com.m2i.gestionfactures.servlet;
+package com.m2i.gestionfactures.servlet.customer;
 
 import com.m2i.gestionfactures.model.Customer;
 import com.m2i.gestionfactures.service.CustomerService;
@@ -9,7 +9,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Optional;
 
 @WebServlet(urlPatterns = UpdateCustomerServlet.URL)

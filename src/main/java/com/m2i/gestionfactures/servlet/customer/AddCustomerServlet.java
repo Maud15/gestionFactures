@@ -1,4 +1,4 @@
-package com.m2i.gestionfactures.servlet;
+package com.m2i.gestionfactures.servlet.customer;
 
 import com.m2i.gestionfactures.model.Customer;
 import com.m2i.gestionfactures.service.CustomerService;
