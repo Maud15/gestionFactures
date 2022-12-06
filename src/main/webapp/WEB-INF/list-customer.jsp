@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.m2i.gestionfactures.servlet.UpdateCustomerServlet" %><%--
   Created by IntelliJ IDEA.
   User: duarte
   Date: 06/12/2022
@@ -12,7 +12,10 @@
     <title>Liste des clients</title>
 </head>
 <body>
-<table>
+    <c:choose>
+        <c:when test="${not empty error}"><div>${error}</div></c:when>
+    </c:choose>
+    <table>
     <thead>
     <tr>
         <th>Numéro de client</th>
@@ -24,6 +27,7 @@
     </tr>
     </thead>
     <tbody>
+
     <c:forEach var="customer" items="${customers}">
     <tr>
         <td><c:out value="${customer.customerNumber}"/></td>
@@ -31,9 +35,9 @@
         <td><c:out value="${customer.address}  ${customer.postCode}  ${customer.city}"/></td>
         <td><c:out value="${customer.phoneNumber}"/></td>
         <td><c:out value="${customer.email}"/></td>
-        <!--<td><form action="=request.getContextPath()%>/games/update" method="get"><input type="hidden" name="id" value="=games.get(i).getId()%>"><button>Modifier</button></form></td>
-        <td><form action="=request.getContextPath()%>/games/delete" method="post"><input type="hidden" name="id" value="=games.get(i).getId()%>"><button>Supprimer</button></form></td>
-        <td><form action="=request.getContextPath()%>/games/details" method="get"><input type="hidden" name="id" value="=games.get(i).getId()%>"><button>Voir en détails</button></form></td>-->
+        <td><form action="/customers/update" method="get"><input type="hidden" name="id" value="${customer.id}"><button>Modifier</button></form></td>
+        <td><form action="/customers/delete" method="post"><input type="hidden" name="id" value="=games.get(i).getId()%>"><button>Supprimer</button></form></td>
+        <td><form action="=request.getContextPath()%>/games/details" method="get"><input type="hidden" name="id" value="=games.get(i).getId()%>"><button>Voir en détails</button></form></td>
     </tr>
     </c:forEach>
     </tbody>

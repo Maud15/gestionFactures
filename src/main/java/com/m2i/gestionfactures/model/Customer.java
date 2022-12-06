@@ -29,6 +29,17 @@ public class Customer {
     @OneToMany(targetEntity = Bill.class, mappedBy = "customer", fetch = FetchType.LAZY)
     private List<Bill> billList;
 
+    public Customer(Long id, String designation, String address, String postCode, String city, String phoneNumber, String email) {
+        this.id = id;
+        this.designation = designation;
+        this.address = address;
+        this.postCode = postCode;
+        this.city = city;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.billList = new ArrayList<>();
+    }
+
     public Customer() {
     }
 
