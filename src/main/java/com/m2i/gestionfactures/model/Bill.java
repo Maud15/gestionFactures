@@ -45,6 +45,12 @@ public class Bill {
     public Bill() {
 
     }
+    public Bill(Long id, LocalDate dateBill, Customer customer) {
+        this.id = id;
+        this.dateBill = dateBill;
+        this.customer = customer;
+    }
+
 
     public Long getId() {
         return id;

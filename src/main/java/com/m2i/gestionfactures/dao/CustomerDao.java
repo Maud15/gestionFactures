@@ -13,14 +13,14 @@ public class CustomerDao implements Dao<Customer> {
 
     @Override
     public Optional<Customer> get(Long id) {
-        Optional<Customer> optRecipe = Optional.empty();
+        Optional<Customer> optCustomer = Optional.empty();
         EntityManager em = ConnectionManager.getEntityManager();
         try {
-            optRecipe = Optional.of(em.find(Customer.class, id));
+            optCustomer = Optional.of(em.find(Customer.class, id));
         } catch(EntityNotFoundException e) {
             e.printStackTrace();
         }
-        return optRecipe;
+        return optCustomer;
     }
 
     @Override
