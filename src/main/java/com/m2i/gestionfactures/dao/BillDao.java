@@ -47,6 +47,19 @@ public class BillDao implements Dao<Bill>{
 
     @Override
     public void delete(Long id) {
-
+        EntityManager em = ConnectionManager.getEntityManager();
+        EntityTransaction et = em.getTransaction();
+        try {
+            et.begin();
+            Optional<Bill> optBill = Optional.of(em.find(Bill.class, id));
+            optBill.ifPresent(em::remove);
+            et.commit();
+        } catch(Exception e) {
+            System.out.println("Impossible de supprimer l'élément choisi");
+            e.printStackTrace();
+            if (et.isActive()) { et.rollback(); }
+        } finally {
+            em.close();
+        }
     }
 }
