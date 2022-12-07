@@ -14,7 +14,7 @@
 
         <div class="addActions">
             <form method="get" action="${pageContext.request.contextPath}/customers/add"><button class="withTag">Nouveau client</button></form>
-            <form method="get" action="${pageContext.request.contextPath}/product/add"><button class="withTag">Nouveau produit</button></form>
+            <form method="get" action="${pageContext.request.contextPath}/products/add"><button class="withTag">Nouveau produit</button></form>
         </div>
     </div>
 </header>
