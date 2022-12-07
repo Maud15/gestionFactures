@@ -5,14 +5,14 @@
   Time: 14:08
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Détails client : ${customer.designation}</title>
 </head>
+<jsp:include page="../header.jsp"></jsp:include>
 <body>
-<h1>Informations client</h1>
+<h2>Informations client</h2>
 <table>
     <thead>
     <tr>
@@ -36,7 +36,7 @@
         </tr>
     </tbody>
 </table>
-<h2>Factures</h2>
+<h3>Factures</h3>
 <table>
     <thead>
     <tr>
@@ -55,16 +55,16 @@
         <td><c:out value="${bill.dateBill}"/></td>
         <td><c:out value="${bill.amountTaxFree}"/></td>
         <td><c:out value="${bill.amountWithTax}"/></td>
-        <td><form action="/bill/update" method="get"><input type="hidden" name="id" value="${bill.id}"><button>Modifier</button></form></td>
-        <td><form action="/bill/delete" method="post"><input type="hidden" name="id" value="${bill.id}"><button>Supprimer</button></form></td>
-        <td><form action="/bill/details" method="get"><input type="hidden" name="customerId" value="${bill.id}"><button>Voir en détails</button></form></td>
+        <td><form action="${pageContext.request.contextPath}/bill/update" method="get"><input type="hidden" name="id" value="${bill.id}"><button>Modifier</button></form></td>
+        <td><form action="${pageContext.request.contextPath}/bill/delete" method="post"><input type="hidden" name="id" value="${bill.id}"><button>Supprimer</button></form></td>
+        <td><form action="${pageContext.request.contextPath}/bill/details" method="get"><input type="hidden" name="customerId" value="${bill.id}"><button>Voir en détails</button></form></td>
 
     </tr>
     </c:forEach>
     </tbody>
 
 </table>
-<a href="/bill/add?customerId=${customer.id}">Saisir une nouvelle facture</a>
+<a href="${pageContext.request.contextPath}/bill/add?customerId=${customer.id}">Saisir une nouvelle facture</a>
 
 </body>
 </html>

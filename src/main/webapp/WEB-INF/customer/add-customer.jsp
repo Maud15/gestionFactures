@@ -1,14 +1,13 @@
-<%--Created by : User: maud_  --  Date: 05/12/2022  --  Time: 16:50
-  (To change : File | Settings | File Templates)--%>
+<%--Created by : User: maud_  --  Date: 05/12/2022  --  Time: 16:50--%>
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Ajout client</title>
 </head>
+<jsp:include page="../header.jsp"></jsp:include>
 <body>
-    <h1>Ajouter un nouveau client</h1>
+    <h2>Ajouter un nouveau client</h2>
 
     <form method="post" action="${pageContext.request.contextPath}/customers/add">
         <label for="designation">Raison sociale</label>
