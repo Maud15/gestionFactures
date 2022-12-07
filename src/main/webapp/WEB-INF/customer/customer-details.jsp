@@ -48,7 +48,7 @@
                 <th>Date</th>
                 <th>Montant HT</th>
                 <th>Montant TTC</th>
-                <th colspan=3>Action</th>
+                <th colspan=3>Actions</th>
 
     </tr>
     </thead>

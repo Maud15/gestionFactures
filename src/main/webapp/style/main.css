@@ -1,12 +1,16 @@
 :root {
-    --main-color: #ad1f1f;
-    --main-color-faded: #f4d4d4;
+    --main-RGB-code:106 90 205;
+    --main-color: rgb(var(--main-RGB-code));
+    --main-color-faded: rgba(var(--main-RGB-code) / 0.3);
+    --main-color-darker: #3929a3;
 
     --alert-color: red;
     --alert-color-faded: #ffe5e5;
 
     --add-color: forestgreen;
     --display-color: royalblue;
+
+    --side-margin: 8vw;
 }
 
 /* ---- GENERAL ---- */
@@ -23,9 +27,8 @@ button {
     font-size: 14px;
 }
 button:hover {
-    border-color: brown;
+    box-shadow: 1px 1px 6px -2px black;
 }
-
 button.withTag {
     padding: 8px 20px 8px 36px;
 }
@@ -47,10 +50,19 @@ body {
 
 /* ---- MAIN ---- */
 main {
-    margin: 10px 12vw;
+    margin: 2vh var(--side-margin);
     padding: 1vw 2vw 2vw 2vw;
-    background: #ededed;
+    background: #f5f5f5;
     border: 1px solid lightgray;
+    overflow: auto;
+}
+
+h2 {
+    color: var(--main-color-darker);
+    margin: 16px 0;
+}
+h3 {
+    margin: 16px 0 6px 0;
 }
 
 /* ---- HEADER ---- */
@@ -69,16 +81,13 @@ h1 {
     padding: 20px 0;
 }
 
-h2 {
-     margin: 10px 0 10px 0;
- }
-
 .menu {
     position: relative;
-    background: var(--main-color-faded);
     display: flex;
     flex-direction: row;
     justify-content: center;
+    height: 60px;
+    background: var(--main-color-faded);
 }
 
 .menu form {
@@ -89,6 +98,7 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
     margin: 0 1vw;
 }
 
@@ -111,7 +121,6 @@ h2 {
 }
 
 /* ---- ERRORS ---- */
-
 .error-message p:before {
     content:"ERREUR : ";
 }
@@ -120,13 +129,15 @@ h2 {
     background: var(--alert-color-faded);
     color: red;
     border: 1px solid var(--alert-color);
-    margin: 12px 12vw;
+    margin: 12px var(--side-margin);
     padding: 0 4vw;
 }
 
 /* ---- TABLE ---- */
 table {
+    border-collapse: collapse;
     width: 100%;
+    background: white;
     border: 1px solid var(--main-color);
 }
 
@@ -140,13 +151,14 @@ th {
 
 td {
     text-align: center;
-    padding: 8px 4px;
+    padding: 8px 6px;
     color: var(--main-color);
     background: white;
+    border-bottom: 1px solid var(--main-color-faded);
 }
 
-td.contain-button {
-    border-width: 0 0 1px 0;
+tr:last-of-type td {
+    border-bottom: 1px solid var(--main-color);
 }
 
 table form {
@@ -157,7 +169,5 @@ table button {
     white-space: nowrap;
     margin: 0 5px;
 }
-
-
 
 /* ---- FORM ---- */
