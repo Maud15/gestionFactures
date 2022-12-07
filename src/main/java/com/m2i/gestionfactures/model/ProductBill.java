@@ -18,7 +18,15 @@ public class ProductBill {
 
     private Float quantity;
 
+    public ProductBill(Bill bill, Product product, Float quantity) {
+        this.bill = bill;
+        this.product = product;
+        this.quantity = quantity;
+    }
 
+    public ProductBill() {
+
+    }
 
     public Bill getBill() {
         return bill;

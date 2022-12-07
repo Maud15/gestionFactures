@@ -21,7 +21,13 @@ public class Product {
     private Float taxRate;
 
 
-
+    public Product(String reference, String description, String unit, Float priceTaxFree, Float taxRate) {
+        this.reference = reference;
+        this.description = description;
+        this.unit = unit;
+        this.priceTaxFree = priceTaxFree;
+        this.taxRate = taxRate;
+    }
 
     public Product() {
     }
@@ -66,5 +72,8 @@ public class Product {
     }
     public void setTaxRate(Float taxRate) {
         this.taxRate = taxRate;
+    }
+    public Float getPriceWithTax(){
+        return priceTaxFree * (1 + taxRate);
     }
 }
