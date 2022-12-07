@@ -27,7 +27,7 @@ public class BillDetailsServlet extends HttpServlet {
         Optional<Bill> optBill = new BillService().get(id);
         if(optBill.isPresent()){
             req.setAttribute("bill", optBill.get());
-            req.setAttribute("amountTaxFree", optBill.get().getAmountTaxFree());
+            req.setAttribute("amountTaxFree", Math.round(optBill.get().getAmountTaxFree() * 100) / 100);
             req.setAttribute("amountWithTax", optBill.get().getAmountWithTax());
             //ProductBillService pbService = new ProductBillService();
             Map<Product, Float> quantities = new HashMap<>();

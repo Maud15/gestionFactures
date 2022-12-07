@@ -74,6 +74,6 @@ public class Product {
         this.taxRate = taxRate;
     }
     public Float getPriceWithTax(){
-        return priceTaxFree * (1 + taxRate);
+        return ((float) Math.round(priceTaxFree * (1 + taxRate) * 100)) / 100;
     }
 }

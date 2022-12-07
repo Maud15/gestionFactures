@@ -66,7 +66,7 @@ public class ProductBillDao {
         EntityTransaction et = em.getTransaction();
         try {
             et.begin();
-            Query query = em.createQuery("delete from ProductBill pb where pb.bill = :bill and pb.product = :product", ProductBill.class);
+            Query query = em.createQuery("delete from ProductBill pb where pb.bill = :bill and pb.product = :product");
             query.setParameter("bill", bill);
             query.setParameter("product", product);
             query.executeUpdate();
