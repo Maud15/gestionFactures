@@ -1,5 +1,6 @@
 <%--Created by : User: maud_  --  Date: 05/12/2022  --  Time: 16:50--%>
 
+<%@ page contentType="text/html;charset=UTF-8"%>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">

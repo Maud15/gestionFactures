@@ -1,6 +1,7 @@
 <%--Created by : User: maud_  --  Date: 07/12/2022  --  Time: 10:20--%>
 
 <head>
+    <%@ page contentType="text/html;charset=UTF-8"%>
     <link href="../style/main.css" rel="stylesheet" type="text/css">
 </head>
 <header>
