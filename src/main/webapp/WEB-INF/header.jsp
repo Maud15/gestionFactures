@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--Created by : User: maud_  --  Date: 07/12/2022  --  Time: 10:20--%>
 
 <head>
@@ -18,3 +19,11 @@
         </div>
     </div>
 </header>
+
+<c:choose>
+    <c:when test="${not empty param.errorMsg}">
+        <div class="error-message">
+            <p><c:out value="${param.errorMsg}"/></p>
+        </div>
+    </c:when>
+</c:choose>

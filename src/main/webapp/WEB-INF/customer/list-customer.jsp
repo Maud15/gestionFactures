@@ -11,37 +11,38 @@
 <head>
     <title>Liste des clients</title>
 </head>
-<jsp:include page="../header.jsp"></jsp:include>
 <body>
-    <c:choose>
-        <c:when test="${not empty error}"><div>${error}</div></c:when>
-    </c:choose>
-    <table>
-    <thead>
-    <tr>
-        <th>Numéro de client</th>
-        <th>Désignation</th>
-        <th>Adresse</th>
-        <th>Numéro de téléphone</th>
-        <th>Email</th>
-        <th colspan=3>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
+    <jsp:include page="../header.jsp"><jsp:param name="errorMsg" value="${error}"/></jsp:include>
 
-    <c:forEach var="customer" items="${customers}">
-    <tr>
-        <td><c:out value="${customer.customerNumber}"/></td>
-        <td><c:out value="${customer.designation}"/></td>
-        <td><c:out value="${customer.address}  ${customer.postCode}  ${customer.city}"/></td>
-        <td><c:out value="${customer.phoneNumber}"/></td>
-        <td><c:out value="${customer.email}"/></td>
-        <td><form action="${pageContext.request.contextPath}/customers/update" method="get"><input type="hidden" name="customerId" value="${customer.id}"><button>Modifier</button></form></td>
-        <td><form action="${pageContext.request.contextPath}/customers/delete" method="post"><input type="hidden" name="customerId" value="${customer.id}"><button>Supprimer</button></form></td>
-        <td><form action="${pageContext.request.contextPath}/customers/details" method="get"><input type="hidden" name="customerId" value="${customer.id}"><button>Voir en détails</button></form></td>
-    </tr>
-    </c:forEach>
-    </tbody>
-</table>
+    <main>
+        <h2>Liste des clients</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Numéro de client</th>
+                <th>Désignation</th>
+                <th>Adresse</th>
+                <th>Numéro de téléphone</th>
+                <th>Email</th>
+                <th colspan=3>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+                <c:forEach var="customer" items="${customers}">
+                <tr>
+                    <td><c:out value="${customer.customerNumber}"/></td>
+                    <td><c:out value="${customer.designation}"/></td>
+                    <td><c:out value="${customer.address}  ${customer.postCode}  ${customer.city}"/></td>
+                    <td><c:out value="${customer.phoneNumber}"/></td>
+                    <td><c:out value="${customer.email}"/></td>
+                    <td><form action="${pageContext.request.contextPath}/customers/update" method="get"><input type="hidden" name="customerId" value="${customer.id}"><button>Modifier</button></form></td>
+                    <td><form action="${pageContext.request.contextPath}/customers/delete" method="post"><input type="hidden" name="customerId" value="${customer.id}"><button>Supprimer</button></form></td>
+                    <td><form action="${pageContext.request.contextPath}/customers/details" method="get"><input type="hidden" name="customerId" value="${customer.id}"><button>Voir en détails</button></form></td>
+                </tr>
+                </c:forEach>
+            </tbody>
+        </table>
+    </main>
+
 </body>
 </html>

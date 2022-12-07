@@ -4,7 +4,6 @@ import com.m2i.gestionfactures.model.Bill;
 import com.m2i.gestionfactures.model.Product;
 import com.m2i.gestionfactures.model.ProductBill;
 import com.m2i.gestionfactures.service.BillService;
-import com.m2i.gestionfactures.service.ProductBillService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

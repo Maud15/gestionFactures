@@ -6,25 +6,29 @@
     <meta charset="UTF-8">
     <title>Ajout client</title>
 </head>
-<jsp:include page="../header.jsp"></jsp:include>
+
 <body>
-    <h2>Ajouter un nouveau client</h2>
+    <jsp:include page="../header.jsp"><jsp:param name="errorMsg" value="${error}"/></jsp:include>
 
-    <form method="post" action="${pageContext.request.contextPath}/customers/add">
-        <label for="designation">Raison sociale</label>
-        <input id="designation" name="designation">
-        <label for="address">Adresse</label>
-        <input id="address" name="address">
-        <label for="postCode">Code postal</label>
-        <input id="postCode" name="postCode">
-        <label for="city">Ville</label>
-        <input id="city" name="city">
-        <label for="phoneNumber">Numéro de téléphone</label>
-        <input id="phoneNumber" name="phoneNumber">
-        <label for="email">E-mail</label>
-        <input id="email" name="email">
+    <main>
+        <h2>Ajouter un nouveau client</h2>
 
-        <button id="add-button">Ajouter</button>
-    </form>
+        <form method="post" action="${pageContext.request.contextPath}/customers/add">
+            <label for="designation">Raison sociale</label>
+            <input id="designation" name="designation">
+            <label for="address">Adresse</label>
+            <input id="address" name="address">
+            <label for="postCode">Code postal</label>
+            <input id="postCode" name="postCode">
+            <label for="city">Ville</label>
+            <input id="city" name="city">
+            <label for="phoneNumber">Numéro de téléphone</label>
+            <input id="phoneNumber" name="phoneNumber">
+            <label for="email">E-mail</label>
+            <input id="email" name="email">
+
+            <button id="add-button">Ajouter</button>
+        </form>
+    </main>
 </body>
 </html>

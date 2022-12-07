@@ -1,12 +1,26 @@
-/* ---- MAIN ---- */
+:root {
+    --main-color: #ad1f1f;
+    --main-color-faded: #f4d4d4;
+
+    --alert-color: red;
+    --alert-color-faded: #ffe5e5;
+
+    --add-color: forestgreen;
+    --display-color: royalblue;
+}
+
+/* ---- GENERAL ---- */
 button {
     position: relative;
     padding: 4px 12px;
     color: white;
-    background: #ad1f1f;
+    background: var(--main-color);
     border: 1px solid transparent;
     border-radius: 2px;
     cursor: pointer;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
 }
 button:hover {
     border-color: brown;
@@ -31,6 +45,14 @@ body {
     margin: 0;
 }
 
+/* ---- MAIN ---- */
+main {
+    margin: 10px 12vw;
+    padding: 1vw 2vw 2vw 2vw;
+    background: #ededed;
+    border: 1px solid lightgray;
+}
+
 /* ---- HEADER ---- */
 
 header {
@@ -42,14 +64,18 @@ header {
 h1 {
     display: block;
     text-align: center;
-    background: #b82e2e;
+    background: var(--main-color);
     margin: 0;
     padding: 20px 0;
 }
 
+h2 {
+     margin: 10px 0 10px 0;
+ }
+
 .menu {
     position: relative;
-    background: rgba(204, 51, 51, 0.21);
+    background: var(--main-color-faded);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -68,29 +94,70 @@ h1 {
 
 .menu button {
     color: white;
-    background: #ad1f1f;
+    background: var(--main-color);
     padding: 8px 20px 8px 36px;
     margin: 0 20px;
     line-height: 16px;
 }
 
-/*.menu button:before {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    height: 16px;
-    width: 16px;
-    top: 8px;
-    left: 10px;
-    border-radius: 50%;
-}*/
-
 .menu .displayActions button:before {
     content: "=";
-    background: royalblue;
+    background: var(--display-color);
 }
 
 .menu .addActions button:before {
     content: "+";
-    background: forestgreen;
+    background: var(--add-color);
 }
+
+/* ---- ERRORS ---- */
+
+.error-message p:before {
+    content:"ERREUR : ";
+}
+
+.error-message {
+    background: var(--alert-color-faded);
+    color: red;
+    border: 1px solid var(--alert-color);
+    margin: 12px 12vw;
+    padding: 0 4vw;
+}
+
+/* ---- TABLE ---- */
+table {
+    width: 100%;
+    border: 1px solid var(--main-color);
+}
+
+thead {
+    background: var(--main-color-faded);
+}
+
+th {
+    padding: 8px 4px;
+}
+
+td {
+    text-align: center;
+    padding: 8px 4px;
+    color: var(--main-color);
+    background: white;
+}
+
+td.contain-button {
+    border-width: 0 0 1px 0;
+}
+
+table form {
+    margin: 0;
+}
+
+table button {
+    white-space: nowrap;
+    margin: 0 5px;
+}
+
+
+
+/* ---- FORM ---- */

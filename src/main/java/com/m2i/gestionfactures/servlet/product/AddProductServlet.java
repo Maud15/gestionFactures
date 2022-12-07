@@ -21,7 +21,7 @@ public class AddProductServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String reference = req.getParameter("reference");
         String description = req.getParameter("description");
         String strPriceTaxFree = req.getParameter("priceTaxFree");

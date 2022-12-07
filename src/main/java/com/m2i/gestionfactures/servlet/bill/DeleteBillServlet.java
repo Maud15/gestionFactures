@@ -2,9 +2,7 @@ package com.m2i.gestionfactures.servlet.bill;
 
 import com.m2i.gestionfactures.model.Bill;
 import com.m2i.gestionfactures.service.BillService;
-import com.m2i.gestionfactures.servlet.customer.CustomerDetailsServlet;
 import com.m2i.gestionfactures.servlet.customer.CustomersListServlet;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
