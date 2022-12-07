@@ -54,6 +54,6 @@ public class BillService implements Service<Bill>{
 
     @Override
     public void delete(Long id) {
-
+        new BillDao().delete(id);
     }
 }
