@@ -1,6 +1,9 @@
 /* ---- MAIN ---- */
 button {
     position: relative;
+    padding: 4px 12px;
+    color: white;
+    background: #ad1f1f;
     border: 1px solid transparent;
     border-radius: 2px;
     cursor: pointer;
@@ -9,6 +12,19 @@ button:hover {
     border-color: brown;
 }
 
+button.withTag {
+    padding: 8px 20px 8px 36px;
+}
+
+button.withTag:before {
+    display: inline-block;
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    top: 8px;
+    left: 10px;
+    border-radius: 50%;
+}
 
 body {
     font-family: sans-serif;
@@ -58,7 +74,7 @@ h1 {
     line-height: 16px;
 }
 
-.menu button:before {
+/*.menu button:before {
     content: "";
     display: inline-block;
     position: absolute;
@@ -67,7 +83,7 @@ h1 {
     top: 8px;
     left: 10px;
     border-radius: 50%;
-}
+}*/
 
 .menu .displayActions button:before {
     content: "=";

@@ -8,13 +8,13 @@
     <h1>Gestion des factures</h1>
     <div class="menu">
         <div class="displayActions">
-            <form method="get" action="${pageContext.request.contextPath}/customers"><button>Afficher les clients</button></form>
-            <form method="get" action="${pageContext.request.contextPath}/products"><button>Afficher les produits</button></form>
+            <form method="get" action="${pageContext.request.contextPath}/customers"><button class="withTag">Afficher les clients</button></form>
+            <form method="get" action="${pageContext.request.contextPath}/products"><button class="withTag">Afficher les produits</button></form>
         </div>
 
         <div class="addActions">
-            <form method="get" action="${pageContext.request.contextPath}/customers/add"><button>Nouveau client</button></form>
-            <form method="get" action="${pageContext.request.contextPath}/product/add"><button>Nouveau produit</button></form>
+            <form method="get" action="${pageContext.request.contextPath}/customers/add"><button class="withTag">Nouveau client</button></form>
+            <form method="get" action="${pageContext.request.contextPath}/product/add"><button class="withTag">Nouveau produit</button></form>
         </div>
     </div>
 </header>
