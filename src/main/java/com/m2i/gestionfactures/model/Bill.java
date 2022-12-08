@@ -26,19 +26,12 @@ public class Bill {
     @JoinColumn(name = "idCustomer")
     private Customer customer;
 
-    /*@Transient
-    private Float amountTaxFree;
-    @Transient
-    private Float amountWithTax;*/
-
     @OneToMany(targetEntity = ProductBill.class, mappedBy = "bill", fetch = FetchType.LAZY)
     private List<ProductBill> productsBillsList;
 
     public Bill(LocalDate dateBill, Customer customer) {
         this.dateBill = dateBill;
         this.customer = customer;
-        /*this.amountTaxFree = 0f;
-        this.amountWithTax = 0f;*/
         this.productsBillsList = new ArrayList<>();
     }
 
@@ -76,7 +69,6 @@ public class Bill {
     public List<ProductBill> getProductsBillsList() {
         return productsBillsList;
     }
-
     public void setProductsBillsList(List<ProductBill> productsBillsList) {
         this.productsBillsList = productsBillsList;
     }
@@ -88,19 +80,8 @@ public class Bill {
         this.customer = customer;
     }
 
-    /*public Float getAmountTaxFree() {
-        return amountTaxFree;
-    }
-    public void setAmountTaxFree(Float amountTaxFree) {
-        this.amountTaxFree = amountTaxFree;
-    }
 
-    public Float getAmountWithTax() {
-        return amountWithTax;
-    }
-    public void setAmountWithTax(Float amountWithTax) {
-        this.amountWithTax = amountWithTax;
-    }*/
+
     public Float getAmountTaxFree(){
         Float result = 0f;
         for(ProductBill pb : productsBillsList){

@@ -10,22 +10,29 @@
 <head>
     <title>Ajout de produit</title>
 </head>
+
 <body>
-<h1>Ajout d'un nouveau produit</h1>
+<jsp:include page="../header.jsp"><jsp:param name="errorMsg" value="${error}"/></jsp:include>
+    <main>
+        <h2>Ajout d'un nouveau produit</h2>
 
-<form method="post" action="${pageContext.request.contextPath}/products/add">
-    <label for="reference">Référence</label>
-    <input id="reference" name="reference">
-    <label for="description">Description</label>
-    <input id="description" name="description">
-    <label for="unit">Unité</label>
-    <input id="unit" name="unit">
-    <label for="priceTaxFree">Prix HT</label>
-    <input id="priceTaxFree" name="priceTaxFree">
-    <label for="taxRate">Taux de TVA</label>
-    <input id="taxRate" name="taxRate">
-    <button id="add-button">Ajouter</button>
-</form>
-
+        <form class="addForm" method="post" action="${pageContext.request.contextPath}/products/add">
+            <div class="formLabels">
+                <label for="reference">Référence</label>
+                <label for="description">Description</label>
+                <label for="unit">Unité</label>
+                <label for="priceTaxFree">Prix HT</label>
+                <label for="taxRate">Taux de TVA</label>
+            </div>
+            <div class="formInputs">
+                <input id="reference" name="reference">
+                <input id="description" name="description">
+                <input id="unit" name="unit">
+                <input id="priceTaxFree" name="priceTaxFree">
+                <input id="taxRate" name="taxRate">
+            </div>
+            <button class="addButton" id="add-button">Ajouter</button>
+        </form>
+    </main>
 </body>
 </html>
