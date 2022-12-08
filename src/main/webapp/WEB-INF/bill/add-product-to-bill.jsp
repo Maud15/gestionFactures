@@ -17,7 +17,7 @@
     <main>
         <form action="${pageContext.request.contextPath}/bill/add-product" method="post">
             <input type="hidden" name="billId" value="${bill.id}">
-            <label for="productId">Choisissez un produit :</label>
+            <label for="productId">Ajouter</label>
 
             <select name="productId" id="productId">
                 <option value="" disabled selected>--Veuillez choisir un produit--</option>

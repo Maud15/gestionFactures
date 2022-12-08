@@ -13,20 +13,23 @@
     <main>
         <h2>Ajouter un nouveau client</h2>
 
-        <form method="post" action="${pageContext.request.contextPath}/customers/add">
-            <label for="designation">Raison sociale</label>
-            <input id="designation" name="designation">
-            <label for="address">Adresse</label>
-            <input id="address" name="address">
-            <label for="postCode">Code postal</label>
-            <input id="postCode" name="postCode">
-            <label for="city">Ville</label>
-            <input id="city" name="city">
-            <label for="phoneNumber">Numéro de téléphone</label>
-            <input id="phoneNumber" name="phoneNumber">
-            <label for="email">E-mail</label>
-            <input id="email" name="email">
-
+        <form class="addForm" method="post" action="${pageContext.request.contextPath}/customers/add">
+            <div class="formLabels">
+                <label for="designation">Raison sociale</label>
+                <label for="address">Adresse</label>
+                <label for="postCode">Code postal</label>
+                <label for="city">Ville</label>
+                <label for="phoneNumber">Numéro de téléphone</label>
+                <label for="email">E-mail</label>
+            </div>
+            <div class="formInputs">
+                <input id="designation" name="designation">
+                <input id="address" name="address">
+                <input id="postCode" name="postCode">
+                <input id="city" name="city">
+                <input id="phoneNumber" name="phoneNumber">
+                <input id="email" name="email">
+            </div>
             <button id="add-button">Ajouter</button>
         </form>
     </main>
